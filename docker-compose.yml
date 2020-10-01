@@ -22,8 +22,8 @@ services:
     container_name: grafana
     image: grafana/grafana
     volumes: 
-      - type: bind
-        source: ./grafana
+      - type: volume
+        source: grafana
         target: /var/lib/grafana
 
     environment:
@@ -32,3 +32,7 @@ services:
       - prometheus
     ports:
       - "3000:3000"
+
+
+volumes:
+    grafana:
